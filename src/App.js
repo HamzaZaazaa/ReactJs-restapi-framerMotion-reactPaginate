@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Categories from "./components/categories/Categories";
-import Jokes from "./components/categories/Jokes";
+import Jokes from "./components/Jokes";
 import NavBarr from "./components/NavBarr";
 function App() {
   return (

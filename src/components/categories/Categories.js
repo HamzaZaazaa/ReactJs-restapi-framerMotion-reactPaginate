@@ -1,26 +1,30 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import CategoryCard from "../CategoryCard";
+import CategoryCard from "./CategoryCard";
 import "../categories/categories.css";
+import { Spinner } from "react-bootstrap";
 
 function Categories() {
   const [categories, setCategories] = useState([]);
-
+  let [loading, setLoading] = useState(true);
   useEffect(() => {
-    try {
-      axios
-        .get("https://api.chucknorris.io/jokes/categories")
-        .then((res) => setCategories(res.data))
-        .catch((err) => console.log(err));
-    } catch (error) {
-      console.log(error);
-    }
+    axios
+      .get("https://api.chucknorris.io/jokes/categories")
+      .then((res) => setCategories(res.data))
+      .finally(() => setLoading((loading = false)))
+      .catch((err) => console.log(err));
   }, [categories]);
   return (
     <div className='mappedCards'>
-      {categories.map((cat) => {
-        return <CategoryCard cat={cat} key={cat} />;
-      })}
+      {!loading ? (
+        categories.map((cat) => {
+          return <CategoryCard cat={cat} key={cat} />;
+        })
+      ) : (
+        <Spinner animation='border' role='status'>
+          <span className='visually-hidden'>Loading...</span>
+        </Spinner>
+      )}
     </div>
   );
 }

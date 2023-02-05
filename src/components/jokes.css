@@ -1,0 +1,27 @@
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+    margin-top: 5%;
+}
+.pagination .page-num {
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: lighter;
+    text-decoration: none;
+}
+.pagination .page-num:hover {
+    background-color: gray;
+    color: white;
+}
+.pagination .active {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.buttons {
+    width: 40% !important;
+}
