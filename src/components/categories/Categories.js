@@ -1,29 +1,26 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import CategoryCard from "../CategoryCard";
+import "../categories/categories.css";
+
 function Categories() {
-  const [categories, setCategories] = useState([
-    {
-      category: "",
-      id: "",
-    },
-  ]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     try {
       axios
         .get("https://api.chucknorris.io/jokes/categories")
-        .then((res) => setCategories({ category: res.data, id: "" }))
+        .then((res) => setCategories(res.data))
         .catch((err) => console.log(err));
-      console.log(categories);
     } catch (error) {
       console.log(error);
     }
   }, [categories]);
   return (
-    <div>
-      {/* {test.map((cate) => {
-        return <h1 key={cate.id}>hello</h1>;
-      })} */}
+    <div className='mappedCards'>
+      {categories.map((cat) => {
+        return <CategoryCard cat={cat} key={cat} />;
+      })}
     </div>
   );
 }
