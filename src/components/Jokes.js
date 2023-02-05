@@ -53,7 +53,7 @@ function Jokes() {
             <span className='visually-hidden'>Loading...</span>
           </Spinner>
         ) : (
-          <h1>hello world</h1>
+          <h1>No jokes Avail</h1>
         )}
       </div>
 
