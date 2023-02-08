@@ -11,13 +11,15 @@ function Categories() {
     axios
       .get("https://api.chucknorris.io/jokes/categories")
       .then((res) => setCategories(res.data))
+      // .then(() => categories.push("uncategorized"))
       .finally(() => setLoading((loading = false)))
       .catch((err) => console.log(err));
   }, [categories]);
+  const newArr = ["uncategorized", ...new Set(categories)];
   return (
     <div className='mappedCards'>
       {!loading ? (
-        categories.map((cat) => {
+        newArr.map((cat) => {
           return <CategoryCard cat={cat} key={cat} />;
         })
       ) : (

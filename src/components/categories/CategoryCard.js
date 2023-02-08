@@ -14,7 +14,7 @@ function CategoryCard({ cat }) {
               fontFamily: "cursive",
             }}
           >
-            {cat}
+            <h6 style={{ display: "flex", justifyContent: "center" }}>{cat}</h6>
           </Card.Title>
           <Link to={`/jokes/${cat}`}>
             <Button variant='primary'>Jokes</Button>
