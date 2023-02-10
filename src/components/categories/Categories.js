@@ -17,16 +17,19 @@ function Categories() {
   }, [categories]);
   const newArr = ["uncategorized", ...new Set(categories)];
   return (
-    <div className='mappedCards'>
-      {!loading ? (
-        newArr.map((cat) => {
-          return <CategoryCard cat={cat} key={cat} />;
-        })
-      ) : (
-        <Spinner animation='border' role='status'>
-          <span className='visually-hidden'>Loading...</span>
-        </Spinner>
-      )}
+    <div>
+      <h1 className='myTitle'>Categories</h1>
+      <div className='mappedCards'>
+        {!loading ? (
+          newArr.map((cat) => {
+            return <CategoryCard cat={cat} key={cat} />;
+          })
+        ) : (
+          <Spinner animation='border' role='status'>
+            <span className='visually-hidden'>Loading...</span>
+          </Spinner>
+        )}
+      </div>
     </div>
   );
 }

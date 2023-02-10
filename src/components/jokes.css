@@ -1,3 +1,28 @@
+body {
+    background-color: #6B5B95 !important;
+}
+.myJokesTitle {
+    text-align: center;
+    margin-top: 5%;
+    font-weight: bold;
+    font-family: cursive;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    text-decoration: underline black;
+    color: white;
+    font-style: oblique
+}
+.NoJokes {
+    text-align: center;
+    margin-top: 5%;
+    font-weight: bold;
+    font-family: cursive;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    text-decoration: underline black;
+    color: white;
+    font-style: oblique
+}
 .pagination {
     list-style: none;
     display: flex;
@@ -13,12 +38,14 @@
     border-radius: 5px;
     font-weight: lighter;
     text-decoration: none;
+    color: white;
 }
 .pagination .page-num:hover {
-    background-color: gray;
+    background-color: #92A8D1;
     color: white;
 }
 .pagination .active {
-    background-color: rgb(0, 0, 0);
-    color: white;
+    background-color: aqua;
+    color: black;
+    font-weight: bold;
 }
