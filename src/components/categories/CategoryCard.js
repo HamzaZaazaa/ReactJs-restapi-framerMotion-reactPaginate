@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function CategoryCard({ cat }) {
   return (
     <div className='mt-3'>
-      <Card style={{ width: "10rem" }}>
+      <Card style={{ width: "10rem", boxShadow: "4px 2px" }}>
         <Card.Body>
           <Card.Title
             style={{

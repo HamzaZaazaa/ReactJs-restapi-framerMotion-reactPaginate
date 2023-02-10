@@ -39,6 +39,11 @@ function Jokes() {
   };
   return (
     <>
+      {currentItems.length && cat.cat !== "uncategorized" ? (
+        <h1 className='myJokesTitle'>{cat.cat} Jokes</h1>
+      ) : currentItems2.length && cat.cat === "uncategorized" ? (
+        <h1 className='myJokesTitle'>{cat.cat} Jokes</h1>
+      ) : null}
       <div
         style={{
           display: "flex",
@@ -51,11 +56,16 @@ function Jokes() {
           currentItems.map((el) => {
             return (
               <Card
-                style={{ width: "18rem", marginTop: "5%", marginBottom: "5%" }}
+                style={{
+                  width: "18rem",
+                  marginTop: "5%",
+                  marginBottom: "5%",
+                  boxShadow: "6px 4px",
+                }}
                 key={el.id}
               >
                 <Card.Img variant='top' src={el.icon_url} />
-                <Card.Body>
+                <Card.Body style={{ textAlign: "center" }}>
                   <Card.Text>{el.value}</Card.Text>
                 </Card.Body>
               </Card>
@@ -65,11 +75,16 @@ function Jokes() {
           currentItems2.map((el) => {
             return (
               <Card
-                style={{ width: "18rem", marginTop: "5%", marginBottom: "5%" }}
+                style={{
+                  width: "18rem",
+                  marginTop: "5%",
+                  marginBottom: "5%",
+                  boxShadow: "6px 4px",
+                }}
                 key={el.id}
               >
                 <Card.Img variant='top' src={el.icon_url} />
-                <Card.Body>
+                <Card.Body style={{ textAlign: "center" }}>
                   <Card.Text>{el.value}</Card.Text>
                 </Card.Body>
               </Card>
@@ -80,7 +95,7 @@ function Jokes() {
             <span className='visually-hidden'>Loading...</span>
           </Spinner>
         ) : (
-          <h1>No jokes Available</h1>
+          <h1 className='NoJokes'>No jokes Available</h1>
         )}
       </div>
       {pageCount > 1 && cat.cat !== "uncategorized" ? (
