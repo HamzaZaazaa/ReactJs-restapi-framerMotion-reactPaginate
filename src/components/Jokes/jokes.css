@@ -51,7 +51,7 @@ body {
 }
 .goBackBtn {
     margin-left: 42%;
-    margin-top: 3%;
+    /* margin-top: 3%; */
     width: 15%;
     font-size: larger;
     font-weight: bold;
