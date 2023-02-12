@@ -8,12 +8,12 @@
 }
 .myTitle {
     text-align: center;
-    margin-top: 5%;
+    margin-top: 10%;
     font-weight: bold;
     font-family: cursive;
     letter-spacing: 0.5rem;
     text-transform: uppercase;
-    text-decoration: underline black;
-    color: white;
+    text-decoration: underline aqua;
+    color: rgba(0, 0, 0, 0.445);
     font-style: oblique
 }

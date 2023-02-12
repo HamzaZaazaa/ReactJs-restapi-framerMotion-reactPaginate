@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Card, Spinner } from "react-bootstrap";
+import { Button, Card, Spinner } from "react-bootstrap";
 import ReactPaginate from "react-paginate";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./jokes.css";
+import { AiOutlineRollback } from "react-icons/ai";
+
 function Jokes() {
   const cat = useParams();
   const [jokes, setJokes] = useState([]);
@@ -60,13 +62,20 @@ function Jokes() {
                   width: "18rem",
                   marginTop: "5%",
                   marginBottom: "5%",
-                  boxShadow: "6px 4px",
+                  boxShadow: "6px 4px aqua",
                 }}
                 key={el.id}
+                border='info'
+                bg='dark'
+                text='white'
               >
                 <Card.Img variant='top' src={el.icon_url} />
                 <Card.Body style={{ textAlign: "center" }}>
-                  <Card.Text>{el.value}</Card.Text>
+                  <Card.Text
+                    style={{ fontFamily: "monospace", fontSize: "small" }}
+                  >
+                    {el.value}
+                  </Card.Text>
                 </Card.Body>
               </Card>
             );
@@ -79,23 +88,42 @@ function Jokes() {
                   width: "18rem",
                   marginTop: "5%",
                   marginBottom: "5%",
-                  boxShadow: "6px 4px",
+                  boxShadow: "6px 4px aqua",
                 }}
                 key={el.id}
+                border='info'
+                bg='dark'
+                text='white'
               >
                 <Card.Img variant='top' src={el.icon_url} />
                 <Card.Body style={{ textAlign: "center" }}>
-                  <Card.Text>{el.value}</Card.Text>
+                  <Card.Text
+                    style={{ fontFamily: "monospace", fontSize: "small" }}
+                  >
+                    {el.value}
+                  </Card.Text>
                 </Card.Body>
               </Card>
             );
           })
         ) : loading ? (
-          <Spinner animation='border' role='status'>
+          <Spinner
+            animation='border'
+            role='status'
+            variant='info'
+            style={{ marginTop: "10%" }}
+          >
             <span className='visually-hidden'>Loading...</span>
           </Spinner>
         ) : (
-          <h1 className='NoJokes'>No jokes Available</h1>
+          <div>
+            <h1 className='NoJokes'>No jokes Available</h1>
+            <Link to='/categories'>
+              <Button variant='outline-info' className='goBackBtn'>
+                <AiOutlineRollback />
+              </Button>
+            </Link>
+          </div>
         )}
       </div>
       {pageCount > 1 && cat.cat !== "uncategorized" ? (

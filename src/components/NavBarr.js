@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function NavBarr() {
   return (
     <div>
-      <Navbar bg='dark' variant='dark'>
+      <Navbar bg='dark' variant='dark' fixed='top'>
         <Container>
           <Navbar.Brand>MY APP</Navbar.Brand>
           <Nav className='me-auto'>
