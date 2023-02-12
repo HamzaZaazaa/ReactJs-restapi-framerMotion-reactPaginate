@@ -42,9 +42,23 @@ function Jokes() {
   return (
     <>
       {currentItems.length && cat.cat !== "uncategorized" ? (
-        <h1 className='myJokesTitle'>{cat.cat} Jokes</h1>
+        <div>
+          <h1 className='myJokesTitle'>{cat.cat} Jokes</h1>
+          <Link to='/categories'>
+            <Button variant='outline-info' className='goBackBtn'>
+              <AiOutlineRollback />
+            </Button>
+          </Link>
+        </div>
       ) : currentItems2.length && cat.cat === "uncategorized" ? (
-        <h1 className='myJokesTitle'>{cat.cat} Jokes</h1>
+        <div>
+          <h1 className='myJokesTitle'>{cat.cat} Jokes</h1>
+          <Link to='/categories'>
+            <Button variant='outline-info' className='goBackBtn'>
+              <AiOutlineRollback />
+            </Button>
+          </Link>
+        </div>
       ) : null}
       <div
         style={{
