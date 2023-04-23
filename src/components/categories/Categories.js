@@ -27,22 +27,19 @@ function Categories() {
               <motion.div
                 className='mt-3'
                 animate={{ x: 20 }}
-                transition={{ ease: "easeOut", duration: 2 }}
-              >
+                transition={{ ease: "easeOut", duration: 2 }}>
                 <Card
                   style={{ width: "10rem", boxShadow: "4px 2px aqua" }}
                   bg='dark'
                   text='light'
-                  border='info'
-                >
+                  border='info'>
                   <Card.Body>
                     <Card.Title
                       style={{
                         fontWeight: "bold",
                         textTransform: "uppercase",
                         fontFamily: "cursive",
-                      }}
-                    >
+                      }}>
                       <h6 style={{ display: "flex", justifyContent: "center" }}>
                         {cat}
                       </h6>
@@ -50,8 +47,7 @@ function Categories() {
                     <Link to={`/jokes/${cat}`}>
                       <motion.div
                         whileHover={{ scale: 1.5 }}
-                        whileTap={{ scale: 0.9 }}
-                      >
+                        whileTap={{ scale: 0.9 }}>
                         <Button variant='outline-info'>Jokes</Button>
                       </motion.div>
                     </Link>
@@ -65,8 +61,7 @@ function Categories() {
             animation='border'
             role='status'
             variant='info'
-            style={{ marginTop: "10%" }}
-          >
+            style={{ marginTop: "10%" }}>
             <span className='visually-hidden'>Loading...</span>
           </Spinner>
         )}
