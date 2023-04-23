@@ -10,7 +10,7 @@ function NavBarr() {
         <Container>
           <Navbar.Brand>MY APP</Navbar.Brand>
           <Nav className='me-auto'>
-            <Link
+            {/* <Link
               to=''
               style={{
                 textDecoration: "none",
@@ -18,15 +18,14 @@ function NavBarr() {
               }}
             >
               Home
-            </Link>
+            </Link> */}
             <Link
               to='/categories'
               style={{
                 textDecoration: "none",
                 color: "white",
               }}
-              className='ps-3'
-            >
+              className='ps-3'>
               Categories
             </Link>
           </Nav>

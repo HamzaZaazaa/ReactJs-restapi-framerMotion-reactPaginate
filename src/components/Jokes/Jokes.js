@@ -66,28 +66,39 @@ function Jokes() {
           flexWrap: "wrap",
           justifyContent: "space-evenly",
           marginTop: "5%",
-        }}
-      >
+        }}>
         {currentItems.length && !loading && cat.cat !== "uncategorized" ? (
           currentItems.map((el) => {
             return (
               <Card
+                className='card-container'
                 style={{
                   width: "18rem",
                   marginTop: "5%",
                   marginBottom: "5%",
                   boxShadow: "6px 4px aqua",
+                  height: "300px",
+                  overflowY: "auto",
                 }}
                 key={el.id}
                 border='info'
                 bg='dark'
-                text='white'
-              >
-                <Card.Img variant='top' src={el.icon_url} />
-                <Card.Body style={{ textAlign: "center" }}>
+                text='white'>
+                {/* <Card.Img variant='top' src={el.icon_url} /> */}
+                <Card.Body
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                  }}>
                   <Card.Text
-                    style={{ fontFamily: "monospace", fontSize: "small" }}
-                  >
+                    style={{
+                      fontFamily: "monospace",
+                      fontSize: "small",
+                      height: "auto",
+                      overflow: "hidden",
+                      padding: "10px",
+                    }}>
                     {el.value}
                   </Card.Text>
                 </Card.Body>
@@ -98,22 +109,34 @@ function Jokes() {
           currentItems2.map((el) => {
             return (
               <Card
+                className='card-container'
                 style={{
                   width: "18rem",
                   marginTop: "5%",
                   marginBottom: "5%",
                   boxShadow: "6px 4px aqua",
+                  height: "300px",
+                  overflowY: "auto",
                 }}
                 key={el.id}
                 border='info'
                 bg='dark'
-                text='white'
-              >
-                <Card.Img variant='top' src={el.icon_url} />
-                <Card.Body style={{ textAlign: "center" }}>
+                text='white'>
+                {/* <Card.Img variant='top' src={el.icon_url} /> */}
+                <Card.Body
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                  }}>
                   <Card.Text
-                    style={{ fontFamily: "monospace", fontSize: "small" }}
-                  >
+                    style={{
+                      fontFamily: "monospace",
+                      fontSize: "small",
+                      height: "auto",
+                      overflow: "hidden",
+                      padding: "10px",
+                    }}>
                     {el.value}
                   </Card.Text>
                 </Card.Body>
@@ -125,8 +148,7 @@ function Jokes() {
             animation='border'
             role='status'
             variant='info'
-            style={{ marginTop: "10%" }}
-          >
+            style={{ marginTop: "10%" }}>
             <span className='visually-hidden'>Loading...</span>
           </Spinner>
         ) : (
